@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radschnellweg Hanau – Aschaffenburg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, 
+    maximum-scale=1.0, user-scalable=no" charset="UTF-8">
+    <!--Copied form leafletjs.com Qick Start Guide -->  
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-toolbar/dist/leaflet.toolbar.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-toolbar/dist/leaflet.toolbar.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-draw-toolbar/dist/leaflet.draw-toolbar.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-draw-toolbar/dist/leaflet.draw-toolbar.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/leaflet-sidebar-v2@3.2/css/leaflet-sidebar.min.css" rel="stylesheet">
+    <script src="js/leaflet-sidebar.min.js"></script>
+
+    <link rel="stylesheet" href="css/custom.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.11.0/proj4-src.min.js" 
+    integrity="sha512-0RE8KABzp65iB5l3qUrDTUic69KBhIOm2q0I0WXZHZVI2HsZudmpGFEad//5nyCTqvzCkpszbPHyAxvTXKIcRQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+
+
+    <!--For local leaflet.draw use
+        <link rel="stylesheet" href="css/leaflet.draw.css">
+	    <script src="js/leaflet.draw.js"></script>
+    -->
+    <!-- WKB to GeoJSON and back handled in POSTGIS DB. 
+        If performance issues arise simple-features-*-js, dbgeo or wellknown can be used.
+        dbgeo worked but is rather big for the usecase, simple-features* did not work.
+        For lather the following two lines of code have to be put in the corresponding file:
+        const { FeatureConverter } = SimpleFeaturesGeoJSON;
+        const { GeometryReader } = SimpleFeaturesWKB;
+        <script src="https://cdn.jsdelivr.net/npm/dbgeo@1.1.0/+esm"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@ngageoint/simple-features-wkb-js@1.1/dist/sf-wkb.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@ngageoint/simple-features-geojson-js@1.1/dist/sf-geojson.min.js"></script>
+    -->
+
+    <script src="js/jquery.js"></script> 
+	<style nonce="init-style-random">
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+        <defs>
+            <clipPath id="bubble-clip" clipPathUnits="objectBoundingBox">
+                <path d="M 0.10624443,0.14000003
+                C 0.03721085,0.14000003 0,0.17419063 0,0.23837123
+                v 0.50052328
+                c 0,0.0641813 0.044718,0.0983661 0.11375568,0.0983661
+                h 0.2396933
+                c 0.0196698,0 0.0361995,0.0118355 0.0499998,0.0232427
+                l 0.0653621,0.0543916
+                c 0.0309097,0.0257268 0.0315055,0.0257268 0.0624177,0
+                l 0.0653589,-0.0543916
+                c 0.0141956,-0.0121349 0.0303277,-0.0232427 0.0499998,-0.0232427
+                H 0.8937916
+                c 0.069035,0 0.1062083,-0.0341847 0.1062083,-0.0983661
+                V 0.2383712
+                C 0.9999999,0.1741898 0.962827,0.14 0.8937916,0.14
+                Z"/>
+            </clipPath>
+        </defs>
+    </svg>
+    <div id="map"></div>
+<script type = "module" src="/js/laender.min.js"></script>
+</body>
+</html>
+
+

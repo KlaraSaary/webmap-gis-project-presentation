@@ -1,0 +1,168 @@
+.secondary-accent-color{
+    color: #eb6408
+}
+ul{
+    padding-left: 0;
+    margin: 0;
+}
+
+li.legend{
+    list-style-type: none; /* No bullet points */
+    position: relative; /* Allow absolute positioning within the li */
+    padding-left: 0.5em;
+    padding-bottom: 0.3em;
+    left: 1.3em;
+    margin-right: 1.3em;
+}
+
+li.legend input[type="checkbox"] {
+    position: absolute; /* Position the checkbox absolutely within the li */
+    left: -1.3em; /* Move the checkbox to the left of the li */
+}
+
+#radschnellwegInfoContent p {
+    font-size: 14px;
+    line-height: 140% !important;
+}   
+
+#mysidebar {
+    color: #000;
+    line-height: 140% !important;
+    font-size: 16px;
+    font-family: Calibri, sans-serif !important;
+}
+
+#mysidebar .leaflet-sidebar-tabs {
+    background-color: #82ba26; 
+    color: #fff;
+}
+
+#mysidebar .leaflet-sidebar-header {
+    background-color: #fff; 
+    color: #82ba26; 
+}
+
+#mysidebar .leaflet-sidebar-tabs > ul > li.active > a {
+    background-color: #fff; 
+    color: #82ba26; 
+}   
+
+@media (orientation: portrait) {
+    .leaflet-sidebar{
+        top: 50%;
+    }
+
+}
+
+@media (hover: none), (pointer: coarse) {
+    .leaflet-control-zoom {
+        display: none;
+    }
+}
+
+.leaflet-right{
+    margin-left: 20%;
+}
+
+.leaflet-control-attribution{
+    font-size: small;
+}
+
+/*Hintergrundkartenauswahl*/
+.bgmap {
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer; 
+    height: 100px; 
+    width: 97%;
+    max-width: 500px;
+    min-width: 185px;
+    background-size: cover; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+    .osm {
+        background-image: url('SVG/Hintergrundkarten_osm.png'); }
+    .tpo_web {
+        background-image: url('SVG/Hintergrundkarten_tpo_web.png'); }
+    .tpo_grey {
+        background-image: url('SVG/Hintergrundkarten_tpo_grey.png'); }
+    .tpo_grey_light {
+        background-image: url('SVG/Hintergrundkarten_tpo_light_grey.png'); }
+    .tpo_web_light {
+        background-image: url('SVG/Hintergrundkarten_tpo_web_light.png'); }
+    .sat {
+        background-image: url('SVG/Hintergrundkarten_sat.png'); }
+    .cycle {
+        background-image: url('SVG/Hintergrundkarten_tpo_web_light.png'); }
+    .topo {
+        background-image: url('SVG/Hintergrundkarten_tpo_web_light.png'); }
+.bgmap:hover {
+        border: 1px solid rgba(200, 200, 200, 1);
+        color: white; }
+    .selected {
+        border: 1px solid rgba(200, 200, 200, 1);
+        color: white; }
+    .bgmap-name {
+        position: relative;
+        top: 56%;
+        width: auto;
+        height: 40%;
+        background-color: rgba(230, 230, 230, 0.7);
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+        padding-top: 4px;
+        font-family: Calibri, sans-serif;
+        letter-spacing: 1px;
+        font-size: 14pt; 
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        font-weight: bold;
+        }
+    
+.leaflet-popup.custom-popup .leaflet-popup-content-wrapper img {
+    clip-path: url(#bubble-clip);
+    object-fit: contain;
+    transform-origin: center center;
+    width: 20em !important;
+}
+
+.leaflet-popup.custom-popup .leaflet-popup-content-wrapper {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.leaflet-popup.custom-popup .leaflet-popup-content {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.leaflet-popup.custom-popup .leaflet-popup-tip-container {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.leaflet-popup.custom-popup .leaflet-popup-tip {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.leaflet-popup.custom-popup .leaflet-popup-content,
+.leaflet-popup.custom-popup .leaflet-popup-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,19 @@
+{
+    "require-dev": {
+        "slim/slim": "^4.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mobili\\LeafletMobil\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Klara",
+            "email": "19249431+KlaraSaary@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "slim/psr7": "^1.6"
+    }
+}
